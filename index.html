@@ -1,91 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--head-->
 <head>
+    <title>Weather_Dashboard</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="/assets/image/nic.jpg">
 </head>
+
+<!--Body-->
 <body>
+    <!-- The video -->
+<video autoplay muted loop id="myVideo">
+    <source src="wave.mp4" type="video/mp4">
+  </video>
+    <!--Top header portion-->
+    <header class=jumbotron>
+        <!--Weather-Dashboard Title-->
+        <h1 class="display-3"> Weather-Dashboard  </h1>
+    </header>
 
     <div class="container">
-        <div class="current-info">
-
-            <div class="date-container">
-                <div class="time" id="time">
-                    12:30 <span id="am-pm">PM</span>
-                </div>
-                <div class="date" id="date">
-                    Monday, 24 May
-                </div>
-
-                <div class="others" id="current-weather-items">
-
-                </div>
-                </div>
-
-                <div class="place-container">
-                    <div class="time-zone" id="time-zone">Asia</div>
-                    <div id="country" class="country">IN</div>
-                </div>
-            </div>
- 
-        </div>
-                    
-    <div class="future-forecast">
-        <div class="today" id="current-temp">
-            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="other">
-            <div class="day">Monday</div>
-            <div class="temp">Night - 25.6&#176; F</div>
-            <div class="temp">Day - 35.6&#176; F</div>
-            </div>
-        </div>
-
-        <div class="weather-forecast" id="weather-forecast">
-            <div class="weather-forecast-item">
-                <div class="day">Tues</div>
-                <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; F</div>
-                <div class="temp">Day - 35.6&#176; F</div>
-            </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Wed</div>
-                    <img src=" http://openweathermap.org/img/wn/10d@2x.png" 
-                    alt="weather icon" class="w-icon">
-                    <div class="temp">Night - 25.6&#176; F</div>
-                    <div class="temp">Day - 35.6&#176; F</div>
-                </div>
-                    <div class="weather-forecast-item">
-                        <div class="day">Thur</div>
-                        <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                        <div class="temp">Night - 25.6&#176; F</div>
-                        <div class="temp">Day - 35.6&#176; F</div>
+        <div class=" row">
+            <!-- City Search sidebar -->
+            <div class="" id="sidebar">
+                <!-- search bar -->
+                <h6 id="search-header">Search for a City:</h6>
+                <div class="col-sm-10 input-group">
+                    <!-- search input -->
+                    <input class="form-control  " id="cityenter" type="text" placeholder="city name">
+                    <!-- append search button to input -->
+                    <div class="input-group-append">
+                        <button class="btn   buttonsearch" type="button">
+                            <i class="fas fa-search"></i></button>
                     </div>
-                        <div class="weather-forecast-item">
-                            <div class="day">Fri</div>
-                            <img src=" http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                            <div class="temp">Night - 25.6&#176; F</div>
-                            <div class="temp">Day - 35.6&#176; F</div>
-                        </div>
-                            <div class="weather-forecast-item">
-                                <div class="day">Sat</div>
-                                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                                <div class="temp">Night - 25.6&#176; F</div>
-                                <div class="temp">Day - 35.6&#176; F</div>
-                            </div>
-        </div>
+                </div>
+                <br>
+                <!-- search history-->
+                <div class="card search-history ">
+                    <ul class="list-group ">
+                        <section>
+                            <button id="search0"></button>
+                            <button id="search1"></button>
+                            <button id="search2"></button>
+                            <button id="search3"></button>
+                            <button id="search4"></button>
+                            <button id="search5"></button>
+                            <button id="search6"></button>
+                            <button id="search7"></button>
+                            <button id="search8"></button>
+                            <button id="search9"></button>
+                        </section>
+                        <button type="button" class="btn btn-dark shadow-none" id="clearhist">Clear History</button>
+                    </ul>
+                </div>
             </div>
-           
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-            <script src="script.js"></script>
-        </body>
-        </html>
-        
+            <!-- Main View -->
+            <div class="col-sm-8">
+                <!-- Current Conditionions View -->
+                <div class="container">
+                    <div class="card card-body current-view" id="current-view">
+                        <div class="card-title " id="cityinfos">
+                            <h2 id="namecity">City name :</h2>
+                            <p id="currentdate"></p>
+                            <img id="weathericon">
+                            <h6 class="card-subtitle mb-2 "> Temperature : <span id="tempcity"></span></h6>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 ">Humidity : <span id="humcity"></span></h6>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 "> Wind Speed : <span id="windspeed"></span></h6>
+                            <hr>
+                            <h6 class="card-subtitle mb-2"> UV Index : <span id="uv-index"></span></h6>
+                        </div>
+                    </div>
+                    <!-- 5 Day Forecast -->
+                    <!-- Dates and weather stats dynamically set -->
+                    <div id="five-day">
+                        <h5>5 Days Forecast</h5>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="card  five-cards">
+                                    <!-- id's are numbered 0-4 to make loop easier, see script.js -->
+                                    <div class="card-title" id="day0">Date</div>
+                                    <img class="icons" id="icon0">
+                                    <p id="highday0">High:</p>
+                                    <p id="lowday0">Low:</p>
+                                    <p id="humday0">Humidity:</p>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card  five-cards">
+                                    <div class="card-title" id="day1">Date</div>
+                                    <img class="icons" id="icon1">
+                                    <p id="highday1">High:</p>
+                                    <p id="lowday1">Low:</p>
+                                    <p id="humday1">Humidity:</p>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card  five-cards">
+                                    <div class="card-title" id="day2">Date</div>
+                                    <img class="icons" id="icon2">
+                                    <p id="highday2">High:</p>
+                                    <p id="lowday2">Low:</p>
+                                    <p id="humday2">Humidity:</p>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card  five-cards">
+                                    <div class="card-title" id="day3">Date</div>
+                                    <img class="icons" id="icon3">
+                                    <p id="highday3">High:</p>
+                                    <p id="lowday3">Low:</p>
+                                    <p id="humday3">Humidity:</p>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card  five-cards">
+                                    <div class="card-title" id="day4">Date</div>
+                                    <img class="icons" id="icon4">
+                                    <p id="highday4">High:</p>
+                                    <p id="lowday4">Low:</p>
+                                    <p id="humday4">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <script scr="script.js"></script>
+    <!-- main jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- my script.js -->
+    <script src="./assets/script/script.js"></script>
+
 </body>
 
 </html>
