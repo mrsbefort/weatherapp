@@ -8,8 +8,10 @@ Create a dashboard that uses [OpenWeather API](https://openweathermap.org/api) t
 **Deployed website: https://mrsbefort.github.io/weatherapp/**
 
 The following images demonstrates the application functionality: 
-img<src= "./assets/image/image3.png>
-img <src= "./assets/image/image4.png">
+
+<img src= "./assets/image/image3.png>
+
+<img= src= "./assets/image/image4.png">
 
 ## User Story
 ```
