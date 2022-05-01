@@ -5,52 +5,80 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family: "poppins", "Helvetica" !important;
 
 
 }
-/* Background video */
-body #myVideo{
+/* body{
+  /*For gif background*/
+  /* background-image: url("../image/wave.gif");
+  background-repeat: no-repeat;
+  background-size: cover; 
+} */
+
+  /*For video background*/
+  #myVideo {
     position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-family: 'Poppins', sans-serif;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+    z-index: -100;
   }
-  
+/*City Name in todays current report*/
+.cityn{
+  font-size: 100px;
+}
+/*Current date*/
+.cd{
+  font-size: 35px; 
+}
+.jumbo-addition {
+  /* position: relative; */
+  z-index: 100;
+  background-color: rgb(205, 232, 245,.1);
+  /* opacity: 0.5; */
+}
+
 header{
   padding: 2px;
   text-align: center;
-    color:#020e14;
+    color:white;
+    border: 1px solid white;
 
     
 }
  
   .list-group {
-      background-color: rgb(235, 231, 231, .3);
+      background-color: rgb(205, 232, 245,.1);
+      border: 1px solid white;
+      border-radius: 10px;
   }
   
   /*All the tiny words*/
   ul li,form,p  {
-      border: black;
+      border: white;ß
   }
 
 
   ul #listcity{
      margin-top: 5px;
      margin-bottom: 5px;
+     
   }
   
  /*How the saved cities appear*/
   section button{
   width: 252px;
   height: 40px;
-  background-color: rgb(79, 200, 236, .3);
+  background-color: rgb(205, 232, 245,.3);
+  
+ 
   }
   
   /*When you hover over the saved cities area*/
   section button:hover{
-    background-color:rgb(79, 200, 236);
+    background-color:rgb(205, 232, 245,.3);
   }
   
   li{
@@ -65,7 +93,9 @@ header{
       font-weight: bolder;
   }
   h6,h5{
-      font-weight: bold;
+      /* font-weight: bold; */
+      font-size:40px; 
+      color: white; 
   }
   
   div #forescast{
@@ -74,19 +104,23 @@ header{
   }
   
   /*This is shows Todays report*/
-  div .card-body{
-      background-color: rgb(205, 232, 245, .9);
-      color: black;
+  div .card-body-color{
+      background-color: rgb(205, 232, 245,.3);;
+      color: white;
+      text-transform: capitalize;
+     border: 1px solid white; 
+     text-align: center;
+     align-content: space-between;
+   
   }
   
   /*card boarder color*/
   .col-sm .card{
      height: 350px;
-     width: 140px;
      padding:20px;
     border-radius: 10px;
     margin: 10px 0;
-    border: 1px solid black;
+    border: 1px solid white;
   }
   
   .col-sm .card div{
@@ -98,16 +132,16 @@ header{
   .col-sm .card p{
     text-align: left;
     font-size: 0.8em;
-    color: black;
+    color: white;
     font-weight: bold;
     
   }
   /*5 Day Forecast header*/
   h5{
-  color: #ffffff;
-   border: 1px solid black;
+ 
+   border: 1px solid white;
    text-align: center;
-   background-color: rgb(67, 71, 75,.3);
+   background-color: rgb(205, 232, 245,.1);
    margin-top: 5px;
    padding: auto;
    border-radius: 10px;
@@ -117,10 +151,10 @@ header{
   width: 100px;
   }
   
-  .card-body, #five-day{
+  /* .card-body, #five-day{
     padding: 1px 0 1px 10px;
     margin: -30px -150px 25px 0 ;
-  }
+  } */
 
   /*City Search Bar*/
   .col-sm-3{
@@ -128,25 +162,28 @@ header{
   }
   /*This is the styling behind the other 5 day forecast*/
   .five-cards{
-    background-color: rgb(205, 232, 245,.6);
+    background-color: rgb(205, 232, 245,.3);
   }
   /*Text on top of each 5 day forecast card*/
    .col-sm div {
-     color: black;
+     color: white;
+     font-size: 20px;
    }
 
    /*This is the color change when you hover over the 5 day forecast*/
    .five-cards:hover{
-     background-color: rgb(79, 200, 236);
+     background-color: rgb(79, 200, 236,.3);
     }
 /*Clear history button color*/
     #clearhist{
-     background-color: rgb(14, 1, 1, .6);
+      background-color: rgb(205, 232, 245,.3);
+     color: white;
+     border: 1px solid white;
    }
    /*Color change when hovering over the clear history button*/
    #clearhist:hover{
-     background-color: rgb(79, 200, 236);
-     color: black
+     background-color: rgb(79, 200, 236,.3);
+     color: white;
    }
 
    /*Search magnifying glass*/
@@ -155,10 +192,15 @@ header{
      color: black;
      font-size: 15px;
    }
-
+   /*off stripe in search*/
+   .btntwo{
+    background-color: rgba(247, 254, 255, 0.3);
+    color: black;
+    font-size: 15px;
+  }
    /*When hovering over the search button*/
    .btn:hover{
-     background-color: rgb(79, 200, 236);
+    background-color: rgb(79, 200, 236,.3);
    }
    
   #cityenter{

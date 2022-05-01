@@ -2,7 +2,7 @@
 let $cityDate = moment().format("llll");
 $("#currentdate").text($cityDate);
 
-/* City Search Functions */
+/* City Search*/
 // click listener calls citysearch() and soon a function related to the .search-history sidebar
 let $clicked = $(".buttonsearch");
 $clicked.on("click", citysearch);
@@ -15,7 +15,7 @@ $("input").keyup(function () {
 })
 // Seachcityname function
 function citysearch() {
-    // saved citer enter by USer in a let
+    // saved city enter by USer in a let
     let cityname = (($(this).parent()).siblings("#cityenter")).val().toLowerCase();
     // empty search bar with setTimeout() so the City name is not gonna stuck on input section
     function clear() {
@@ -23,8 +23,7 @@ function citysearch() {
     }
     setTimeout(clear, 300);
     //Query for Current Weather Using API URL And Ajax 
-    let firstQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
-        cityname + "&units=imperial&appid=e7c303b6206e1039548ab3f11d2207b3";
+    let firstQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +cityname + "&units=imperial&appid=b560802e22d3b5c9a667a84cd007a9bd";
     $.ajax({
         url: firstQueryURL,
         method: "GET"
@@ -49,7 +48,7 @@ function citysearch() {
         /* Query for One Call API - this will give us our info for 5 Day Forecast cards */
         let secondQueryURL =
             "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +
-            "&exclude=hourly&units=imperial&appid=e7c303b6206e1039548ab3f11d2207b3";
+            "&exclude=hourly&units=imperial&appid=b560802e22d3b5c9a667a84cd007a9bd";
         $.ajax({
             url: secondQueryURL,
             method: "GET"
