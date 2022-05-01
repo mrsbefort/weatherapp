@@ -11,10 +11,6 @@ The following images demonstrates the application functionality:
 
 <img src="./assets/image/image4.png">
 
-
-
-
-
 <img src="./assets/image/image3.png">
 
 
@@ -48,7 +44,7 @@ THEN I am again presented with current and future conditions for that city
 
 In this challenge I spent some time learning how to style while using bootstrap. Particularly with changing text colors and adding opacity/transparent to background colors, which I liked. I also tried to continue learning the hidden feature and implementing it to hide the saved cities until used in my code. I had my first experience with adding videos to my background, which I found how to do using a quick google search. 
 
-https://www.pexels.com/videos/
+https://www.videvo.net/ 
 
 https://getbootstrap.com/ 
 
