@@ -1,7 +1,8 @@
 # weatherapp
 
 <h1 align="center">🌦5 Day Weather Forecast</h1>
-<h2 align="center">By: Gabrielle Befort
+<h2 align="center">By: Gabrielle Befort</h2>
+
 Create a dashboard that uses [OpenWeather API](https://openweathermap.org/api) to retrieve weather data. Type any location and see the weather anywhere. This uses `localStorage` to save any cities you searched for. 
 
 **Deployed website: https://mrsbefort.github.io/weatherapp/**
